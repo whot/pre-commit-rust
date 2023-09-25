@@ -35,3 +35,5 @@
   types: ["rust"]
   stages: ["pre-push", "manual",]
   entry: cargo build
+  pass_filenames: false
+

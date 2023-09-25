@@ -39,3 +39,9 @@ You can use `test` and `build` pre-commit hooks to make sure you are not pushing
     - id: build
     - id: test
 ```
+
+You can then install these hooks via:
+
+```sh
+pre-commit install --hook-type pre-push
+```
