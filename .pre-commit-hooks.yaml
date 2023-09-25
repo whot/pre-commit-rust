@@ -20,3 +20,18 @@
   args: ["--", "-D", "warnings"]
   types: [rust]
   pass_filenames: false
+- id: test
+  name: test
+  description: Run tests with cargo test
+  entry: cargo test
+  language: system
+  types: [rust]
+  args: ["--"]
+  stages: ["pre-push"]
+- id: build
+  name: build
+  description: Build using cargo build
+  language: system
+  types: ["rust"]
+  stages: ["pre-push", "manual",]
+  entry: cargo build
