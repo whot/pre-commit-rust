@@ -3,14 +3,16 @@
   description: Format files with cargo fmt.
   entry: cargo fmt
   language: system
-  types: [rust]
+  types_or: ["rust", "file"]
+  files: '(.rs|Cargo.toml)$'
   args: ["--"]
 - id: cargo-check
   name: cargo check
   description: Check the package for errors.
   entry: cargo check
   language: system
-  types: [rust]
+  types_or: ["rust", "file"]
+  files: '(.rs|Cargo.toml|Cargo.lock)$'
   pass_filenames: false
 - id: clippy
   name: clippy
