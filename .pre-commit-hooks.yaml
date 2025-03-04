@@ -2,7 +2,7 @@
   name: fmt
   description: Format files with cargo fmt.
   entry: cargo fmt
-  language: system
+  language: rust
   types_or: ["rust", "file"]
   files: '(.rs|Cargo.toml)$'
   args: ["--"]
@@ -10,7 +10,7 @@
   name: cargo check
   description: Check the package for errors.
   entry: cargo check
-  language: system
+  language: rust
   types_or: ["rust", "file"]
   files: '(.rs|Cargo.toml|Cargo.lock)$'
   pass_filenames: false
@@ -18,7 +18,7 @@
   name: clippy
   description: Lint rust sources
   entry: cargo clippy
-  language: system
+  language: rust
   args: ["--", "-D", "warnings"]
   types: [rust]
   pass_filenames: false
@@ -26,14 +26,14 @@
   name: test
   description: Run tests with cargo test
   entry: cargo test
-  language: system
+  language: rust
   types: [rust]
   args: ["--"]
   stages: ["push"]
 - id: build
   name: build
   description: Build using cargo build
-  language: system
+  language: rust
   types: ["rust"]
   stages: ["push", "manual",]
   entry: cargo build
